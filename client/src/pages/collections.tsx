@@ -86,7 +86,7 @@ function TopBar() {
       <div className="tram-container">
         <div className="flex items-center justify-between border-b border-border/60 py-5">
           <Link href="/" className="tram-focus tram-display text-lg font-semibold" data-testid="link-brand-home">
-            TRAMBOO
+            tramboo
           </Link>
           <div className="flex items-center gap-2" data-testid="group-top-actions">
             <Link

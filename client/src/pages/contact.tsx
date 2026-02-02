@@ -25,7 +25,7 @@ function TopBar() {
       <div className="tram-container">
         <div className="flex items-center justify-between border-b border-border/60 py-5">
           <Link href="/" className="tram-focus tram-display text-lg font-semibold" data-testid="link-brand-home">
-            TRAMBOO
+            tramboo
           </Link>
           <Link
             href="/collections"
@@ -157,7 +157,7 @@ export default function Contact() {
         <div className="tram-hr" />
         <div className="grid gap-10 py-10 md:grid-cols-2 md:items-center">
           <div className="text-sm text-muted-foreground" data-testid="text-footer-note">
-            TRAMBOO  We reply within 12 business days (prototype copy).
+            tramboo  We reply within 12 business days (prototype copy).
           </div>
           <div className="flex gap-4 md:justify-end">
             <Link

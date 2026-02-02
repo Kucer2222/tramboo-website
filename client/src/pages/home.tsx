@@ -33,7 +33,7 @@ function Nav() {
             className="tram-focus flex items-baseline gap-2"
             data-testid="link-brand-home"
           >
-            <span className="tram-display text-lg font-semibold tracking-tight">TRAMBOO</span>
+            <span className="tram-display text-lg font-semibold tracking-tight">tramboo</span>
             <span className="text-xs text-muted-foreground tram-kicker">Bespoke</span>
           </Link>
 
@@ -98,8 +98,8 @@ function Hero() {
             <span className="block">bespoke hardwood pieces.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground" data-testid="text-hero-subtitle">
-            TRAMBOO crafts river tables, dining tables, chairs, and one-of-one commissions in
-            walnut, elm, and premium hardwoodsdesigned to age beautifully.
+            tramboo crafts river tables, dining tables, chairs, and one-of-one commissions in
+            walnut, elm, and premium hardwoods—designed to age beautifully.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-testid="group-hero-cta">
@@ -140,7 +140,7 @@ function Hero() {
           <div className="relative overflow-hidden rounded-[2.25rem] border border-border/60 bg-card shadow-md">
             <img
               src={heroImg}
-              alt="TRAMBOO studio"
+              alt="tramboo studio"
               className="h-[420px] w-full object-cover md:h-[520px]"
               data-testid="img-hero"
             />
@@ -152,7 +152,7 @@ function Hero() {
                       Featured
                     </div>
                     <div className="mt-1 truncate text-sm" data-testid="text-hero-caption-title">
-                      Studio Series  Walnut & linen tones
+                      Studio Series — Walnut & linen tones
                     </div>
                   </div>
                   <div className="hidden text-xs text-muted-foreground md:block" data-testid="text-hero-caption-meta">
@@ -284,7 +284,7 @@ function BrandStatement() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground" data-testid="text-statement-body">
             We treat wood like a living material: grain direction, movement, and finish are
             considered from the first sketch to the final polish. Every commission is crafted to
-            bring warmth and clarity to a spacenever noise.
+            bring warmth and clarity to a space—never noise.
           </p>
 
           <div className="mt-8 grid grid-cols-3 gap-5" data-testid="grid-statement-stats">
@@ -335,7 +335,7 @@ function Footer() {
       <div className="grid gap-10 py-10 md:grid-cols-3">
         <div>
           <div className="tram-display text-lg font-semibold" data-testid="text-footer-brand">
-            TRAMBOO
+            tramboo
           </div>
           <p className="mt-3 max-w-sm text-sm text-muted-foreground" data-testid="text-footer-tagline">
             Bespoke hardwood furniture, made quietly and deliberately.
@@ -360,7 +360,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-sm text-muted-foreground" data-testid="text-footer-note">
-           {new Date().getFullYear()} TRAMBOO. All imagery is placeholder for prototype.
+          © {new Date().getFullYear()} tramboo. All imagery is placeholder for prototype.
         </div>
       </div>
     </footer>

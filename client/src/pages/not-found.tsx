@@ -13,7 +13,7 @@ export default function NotFound() {
           className="max-w-xl"
         >
           <div className="tram-kicker text-xs text-muted-foreground" data-testid="text-notfound-kicker">
-            TRAMBOO
+            tramboo
           </div>
           <h1 className="tram-display mt-4 text-4xl md:text-6xl font-semibold" data-testid="text-notfound-title">
             Page not found.
