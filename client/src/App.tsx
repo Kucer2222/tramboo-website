@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Collections from "@/pages/collections";
+import ProductDetail from "@/pages/product-detail";
 import HowItWorks from "@/pages/how-it-works";
 import Contact from "@/pages/contact";
 import { AnimatePresence } from "framer-motion";
@@ -18,6 +19,7 @@ function Router() {
       <Switch key={location}>
         <Route path="/" component={Home} />
         <Route path="/collections" component={Collections} />
+        <Route path="/product/:id" component={ProductDetail} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />

@@ -89,15 +89,13 @@ function TopBar() {
             tramboo
           </Link>
           <div className="flex items-center gap-2" data-testid="group-top-actions">
-            <a
-              href="https://shopify.com"
+            <Link
+              href="/contact"
               className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
               data-testid="button-top-custom"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Shop online <ArrowUpRight className="h-4 w-4" />
-            </a>
+              Enquire <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </div>
@@ -173,11 +171,9 @@ export default function Collections() {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
               data-testid={`card-product-${p.id}`}
             >
-              <a 
-                href="https://shopify.com" 
+              <Link 
+                href={`/product/${p.id}`} 
                 className="tram-focus group block"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <div className="overflow-hidden rounded-3xl border border-border/70 bg-card shadow-sm transition group-hover:shadow">
                   <div className="relative">
@@ -226,11 +222,11 @@ export default function Collections() {
                     </div>
 
                     <div className="mt-6 inline-flex items-center gap-2 text-sm text-foreground/80 transition group-hover:text-foreground" data-testid={`link-view-${p.id}`}>
-                      Purchase on Shopify <ArrowUpRight className="h-4 w-4" />
+                      View details <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

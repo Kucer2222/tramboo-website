@@ -52,25 +52,16 @@ function Nav() {
             >
               How it works
             </Link>
-            <Link
-              href="/contact"
-              className="tram-focus text-sm text-foreground/80 transition hover:text-foreground"
-              data-testid="link-nav-contact"
-            >
-              Custom order
-            </Link>
           </nav>
 
-          <a
-            href="https://shopify.com"
+          <Link
+            href="/contact"
             className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
             data-testid="button-nav-request"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Shop online
+            Enquire
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </header>
@@ -105,22 +96,20 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-testid="group-hero-cta">
-            <a
-              href="https://shopify.com"
-              className="tram-focus group inline-flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground shadow-sm transition hover:shadow"
-              data-testid="button-hero-collections"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Shop online
-              <ChevronRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </a>
             <Link
               href="/collections"
+              className="tram-focus group inline-flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground shadow-sm transition hover:shadow"
+              data-testid="button-hero-collections"
+            >
+              View collections
+              <ChevronRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/contact"
               className="tram-focus inline-flex items-center justify-between gap-3 rounded-full border border-border bg-card px-5 py-3 text-sm transition hover:shadow-sm"
               data-testid="button-hero-custom"
             >
-              Browse pieces
+              Custom order
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -175,18 +164,21 @@ function Hero() {
 function Featured() {
   const items = [
     {
+      id: "rt-01",
       title: "Walnut River Table",
       subtitle: "Live-edge slab, resin inlay",
       image: riverImg,
       tag: "River",
     },
     {
+      id: "dt-01",
       title: "Dining Table",
       subtitle: "Classic joinery, modern proportion",
       image: diningImg,
       tag: "Dining",
     },
     {
+      id: "ch-01",
       title: "Elm Chair",
       subtitle: "Light profile, sculpted comfort",
       image: chairImg,
@@ -218,7 +210,7 @@ function Featured() {
         {items.map((p) => (
           <Link
             key={p.title}
-            href="/collections"
+            href={`/product/${p.id}`}
             className="tram-focus group"
             data-testid={`card-product-${p.tag.toLowerCase()}`}
           >
