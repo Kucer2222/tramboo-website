@@ -89,7 +89,7 @@ function TopBar() {
             tramboo
           </Link>
           <div className="flex items-center gap-2" data-testid="group-top-actions">
-            <Link
+            <a
               href="https://shopify.com"
               className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
               data-testid="button-top-custom"
@@ -97,7 +97,7 @@ function TopBar() {
               rel="noopener noreferrer"
             >
               Shop online <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -173,7 +173,7 @@ export default function Collections() {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
               data-testid={`card-product-${p.id}`}
             >
-              <Link 
+              <a 
                 href="https://shopify.com" 
                 className="tram-focus group block"
                 target="_blank"
@@ -230,7 +230,7 @@ export default function Collections() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

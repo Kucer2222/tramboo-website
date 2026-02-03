@@ -61,7 +61,7 @@ function Nav() {
             </Link>
           </nav>
 
-          <Link
+          <a
             href="https://shopify.com"
             className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
             data-testid="button-nav-request"
@@ -70,7 +70,7 @@ function Nav() {
           >
             Shop online
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -105,7 +105,7 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center" data-testid="group-hero-cta">
-            <Link
+            <a
               href="https://shopify.com"
               className="tram-focus group inline-flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground shadow-sm transition hover:shadow"
               data-testid="button-hero-collections"
@@ -114,7 +114,7 @@ function Hero() {
             >
               Shop online
               <ChevronRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </Link>
+            </a>
             <Link
               href="/collections"
               className="tram-focus inline-flex items-center justify-between gap-3 rounded-full border border-border bg-card px-5 py-3 text-sm transition hover:shadow-sm"
