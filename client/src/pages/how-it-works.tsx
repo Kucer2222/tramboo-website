@@ -2,15 +2,15 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, DraftingCompass, Truck } from "lucide-react";
 
-import craftImg from "@/assets/images/craft.jpg";
+import craftImg from "@/assets/images/wood-detail-v1.webp";
 
 function Page({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
       className="min-h-screen tram-gradient"
       data-testid="page-how"
     >
@@ -18,6 +18,13 @@ function Page({ children }: { children: React.ReactNode }) {
     </motion.main>
   );
 }
+
+const WHATSAPP_NUMBER = "917051136173";
+const WHATSAPP_BASE_MSG = "Hello Tramboo Home, I’m interested in a custom furniture piece and would like to discuss details.";
+
+const getWhatsappLink = () => {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_BASE_MSG)}`;
+};
 
 function TopBar() {
   return (
@@ -27,13 +34,25 @@ function TopBar() {
           <Link href="/" className="tram-focus tram-display text-lg font-semibold" data-testid="link-brand-home">
             tramboo
           </Link>
-          <Link
-            href="/collections"
-            className="tram-focus text-sm text-foreground/80 transition hover:text-foreground"
-            data-testid="link-nav-collections"
-          >
-            Collections
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/collections"
+              className="tram-focus text-sm text-foreground/80 transition hover:text-foreground"
+              data-testid="link-nav-collections"
+            >
+              Collections
+            </Link>
+            <a
+              href={getWhatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
+              data-testid="button-nav-request"
+            >
+              Enquire
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -80,14 +99,16 @@ export default function HowItWorks() {
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row" data-testid="group-how-cta">
-              <Link
-                href="/contact"
+              <a
+                href={getWhatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="tram-focus inline-flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground shadow-sm transition hover:shadow"
                 data-testid="button-how-start"
               >
                 Start a custom order
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
               <Link
                 href="/collections"
                 className="tram-focus inline-flex items-center justify-between gap-3 rounded-full border border-border bg-card px-5 py-3 text-sm transition hover:shadow-sm"
@@ -167,14 +188,16 @@ export default function HowItWorks() {
                 Most pieces take 612 weeks depending on complexity and material. If you have a date, well plan around it.
               </p>
             </div>
-            <Link
-              href="/contact"
+            <a
+              href={getWhatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="tram-focus inline-flex items-center justify-between gap-3 rounded-full bg-primary px-5 py-3 text-sm text-primary-foreground shadow-sm transition hover:shadow"
               data-testid="button-how-note-cta"
             >
               Request a quote
               <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -2,10 +2,17 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Filter, Search } from "lucide-react";
 
-import riverImg from "@/assets/images/river-table.jpg";
-import diningImg from "@/assets/images/dining-table.jpg";
-import chairImg from "@/assets/images/chair.jpg";
+import riverImg from "@/assets/images/river-table-v4.jpg";
+import diningImg from "@/assets/images/dining-table-v4.webp";
+import chairImg from "@/assets/images/chair-v2.jpg";
 import craftImg from "@/assets/images/craft.jpg";
+
+const WHATSAPP_NUMBER = "917051136173";
+const WHATSAPP_BASE_MSG = "Hello Tramboo Home, I’m interested in a custom furniture piece and would like to discuss details.";
+
+const getWhatsappLink = () => {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_BASE_MSG)}`;
+};
 
 const CATEGORIES = ["All", "River tables", "Dining tables", "Chairs", "Custom"] as const;
 
@@ -31,7 +38,7 @@ const PRODUCTS: Product[] = [
     size: "2200 × 900",
     leadTime: "8–12 weeks",
     image: riverImg,
-    priceFrom: "$6,900",
+    priceFrom: "Request Quote",
   },
   {
     id: "dt-01",
@@ -41,7 +48,7 @@ const PRODUCTS: Product[] = [
     size: "2400 × 1000",
     leadTime: "6–10 weeks",
     image: diningImg,
-    priceFrom: "$5,400",
+    priceFrom: "Request Quote",
   },
   {
     id: "ch-01",
@@ -51,7 +58,7 @@ const PRODUCTS: Product[] = [
     size: "W 520 · H 780",
     leadTime: "5–7 weeks",
     image: chairImg,
-    priceFrom: "$890",
+    priceFrom: "Request Quote",
   },
   {
     id: "cu-01",
@@ -68,9 +75,9 @@ const PRODUCTS: Product[] = [
 function Page({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="min-h-screen tram-gradient"
       data-testid="page-collections"
@@ -88,14 +95,23 @@ function TopBar() {
           <Link href="/" className="tram-focus tram-display text-lg font-semibold" data-testid="link-brand-home">
             tramboo
           </Link>
-          <div className="flex items-center gap-2" data-testid="group-top-actions">
+          <div className="flex items-center gap-6">
             <Link
-              href="/contact"
+              href="/how-it-works"
+              className="tram-focus text-sm text-foreground/80 transition hover:text-foreground"
+              data-testid="link-nav-how"
+            >
+              How it works
+            </Link>
+            <a
+              href={getWhatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
               data-testid="button-top-custom"
             >
               Enquire <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -117,7 +133,7 @@ export default function Collections() {
               Collections
             </h1>
             <p className="mt-4 max-w-xl text-sm md:text-base text-muted-foreground" data-testid="text-collections-subtitle">
-              A curated set of formsriver tables, dining tables, chairs, and custom builds. Clean lines,
+              A curated set of forms—river tables, dining tables, chairs, and custom builds. Clean lines,
               calm proportions, and materials chosen for depth.
             </p>
           </div>
@@ -201,7 +217,7 @@ export default function Collections() {
                         </div>
                       </div>
                       <div className="text-sm text-foreground/80" data-testid={`text-price-${p.id}`}>
-                        From {p.priceFrom}
+                        {p.priceFrom}
                       </div>
                     </div>
 
@@ -235,7 +251,7 @@ export default function Collections() {
       <footer className="tram-container pb-14" data-testid="footer">
         <div className="tram-hr" />
         <div className="py-10 text-sm text-muted-foreground" data-testid="text-footer-note">
-          TRAMBOO  Catalogue preview. Pricing shown is indicative.
+          tramboo studio — Catalogue preview. Pricing shown is indicative.
         </div>
       </footer>
     </Page>

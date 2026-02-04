@@ -66,6 +66,7 @@ const PRODUCTS = [
 ];
 
 const WHATSAPP_NUMBER = "917051136173";
+const WHATSAPP_BASE_MSG = "Hello Tramboo Home, I’m interested in a custom furniture piece and would like to discuss details.";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -74,7 +75,7 @@ export default function ProductDetail() {
   if (!product) return null;
 
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hello tramboo studio, I am interested in the ${product.name}. Could you provide more details?`
+    `${WHATSAPP_BASE_MSG} Specifically interested in the ${product.name}.`
   )}`;
 
   return (

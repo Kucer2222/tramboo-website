@@ -2,19 +2,19 @@ import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 
-import heroImg from "@/assets/images/studio.jpg";
-import woodGrainImg from "@/assets/images/wood-grain.jpg";
-import riverImg from "@/assets/images/river-table.jpg";
-import diningImg from "@/assets/images/dining-table.jpg";
-import chairImg from "@/assets/images/chair.jpg";
+import heroImg from "@/assets/images/river-table-v8.webp";
+import woodGrainImg from "@/assets/images/wood-detail-v1.webp";
+import riverImg from "@/assets/images/river-table-v4.jpg";
+import diningImg from "@/assets/images/dining-table-v4.webp";
+import chairImg from "@/assets/images/chair-v2.jpg";
 
 function Page({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="min-h-screen tram-gradient"
       data-testid="page-home"
     >
@@ -22,6 +22,17 @@ function Page({ children }: { children: React.ReactNode }) {
     </motion.main>
   );
 }
+
+const WHATSAPP_NUMBER = "917051136173";
+const WHATSAPP_BASE_MSG = "Hello Tramboo Home, I’m interested in a custom furniture piece and would like to discuss details.";
+
+const getWhatsappLink = (productName?: string) => {
+  let text = WHATSAPP_BASE_MSG;
+  if (productName) {
+    text += ` Specifically interested in the ${productName}.`;
+  }
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+};
 
 function Nav() {
   return (
@@ -34,7 +45,7 @@ function Nav() {
             data-testid="link-brand-home"
           >
             <span className="tram-display text-lg font-semibold tracking-tight">tramboo</span>
-            <span className="text-xs text-muted-foreground tram-kicker">Bespoke</span>
+            <span className="text-xs text-muted-foreground tram-kicker">Home</span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex" data-testid="nav-links">
@@ -54,14 +65,16 @@ function Nav() {
             </Link>
           </nav>
 
-          <Link
-            href="/contact"
+          <a
+            href={getWhatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="tram-focus inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm transition hover:shadow-sm"
             data-testid="button-nav-request"
           >
             Enquire
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -104,20 +117,22 @@ function Hero() {
               View collections
               <ChevronRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </Link>
-            <Link
-              href="/contact"
+            <a
+              href={getWhatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="tram-focus inline-flex items-center justify-between gap-3 rounded-full border border-border bg-card px-5 py-3 text-sm transition hover:shadow-sm"
               data-testid="button-hero-custom"
             >
               Custom order
               <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6" data-testid="grid-hero-metrics">
             {[
               { label: "Materials", value: "Walnut · Elm" },
-              { label: "Made to order", value: "612 weeks" },
+              { label: "Made to order", value: "6–12 weeks" },
               { label: "Finish", value: "Hand-rubbed oil" },
             ].map((m, idx) => (
               <div key={m.label} className="space-y-1" data-testid={`metric-${idx}`}>
@@ -138,17 +153,15 @@ function Hero() {
               data-testid="img-hero"
             />
             <div className="absolute inset-x-0 bottom-0 p-5">
-              <div className="rounded-2xl border border-border/70 bg-background/70 px-4 py-3 backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="min-w-0">
-                    <div className="tram-kicker text-[10px] text-muted-foreground" data-testid="text-hero-caption-kicker">
-                      Featured
-                    </div>
-                    <div className="mt-1 truncate text-sm" data-testid="text-hero-caption-title">
-                      Studio Series — Walnut & linen tones
-                    </div>
+              <div className="rounded-2xl border border-border/70 bg-background/70 px-6 py-5 backdrop-blur-xl">
+                <div className="flex flex-col gap-1">
+                  <div className="tram-kicker text-[10px] text-muted-foreground uppercase tracking-widest" data-testid="text-hero-caption-kicker">
+                    Featured piece
                   </div>
-                  <div className="hidden text-xs text-muted-foreground md:block" data-testid="text-hero-caption-meta">
+                  <div className="mt-1 text-base font-medium" data-testid="text-hero-caption-title">
+                    Studio Series — Walnut & linen tones
+                  </div>
+                  <div className="mt-2 text-[11px] text-muted-foreground uppercase tracking-wider" data-testid="text-hero-caption-meta">
                     Hand-finished · Built to last
                   </div>
                 </div>
@@ -188,25 +201,25 @@ function Featured() {
 
   return (
     <section className="tram-container mt-16 md:mt-24" data-testid="section-featured">
-      <div className="flex items-end justify-between gap-8">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <div className="tram-kicker text-xs text-muted-foreground" data-testid="text-featured-kicker">
+          <div className="tram-kicker text-xs text-muted-foreground mb-3" data-testid="text-featured-kicker">
             Limited selections
           </div>
-          <h2 className="tram-display mt-4 text-2xl md:text-4xl font-semibold" data-testid="text-featured-title">
+          <h2 className="tram-display text-3xl md:text-4xl font-semibold leading-tight" data-testid="text-featured-title">
             Large forms, calm details.
           </h2>
         </div>
         <Link
           href="/collections"
-          className="tram-focus hidden items-center gap-2 text-sm text-foreground/80 transition hover:text-foreground md:inline-flex"
+          className="tram-focus inline-flex items-center gap-2 text-sm text-foreground/80 transition hover:text-foreground"
           data-testid="link-featured-all"
         >
           Explore catalogue <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3" data-testid="grid-featured">
+      <div className="mt-12 grid gap-8 md:grid-cols-3" data-testid="grid-featured">
         {items.map((p) => (
           <Link
             key={p.title}
@@ -250,16 +263,6 @@ function Featured() {
             </motion.div>
           </Link>
         ))}
-      </div>
-
-      <div className="mt-10 md:hidden">
-        <Link
-          href="/collections"
-          className="tram-focus inline-flex items-center gap-2 text-sm text-foreground/80 transition hover:text-foreground"
-          data-testid="link-featured-all-mobile"
-        >
-          Explore catalogue <ArrowUpRight className="h-4 w-4" />
-        </Link>
       </div>
     </section>
   );
@@ -344,7 +347,7 @@ function Footer() {
               <Link href="/" className="tram-focus block text-foreground/75 hover:text-foreground" data-testid="link-footer-home">Home</Link>
               <Link href="/collections" className="tram-focus block text-foreground/75 hover:text-foreground" data-testid="link-footer-collections">Collections</Link>
               <Link href="/how-it-works" className="tram-focus block text-foreground/75 hover:text-foreground" data-testid="link-footer-how">How it works</Link>
-              <Link href="/contact" className="tram-focus block text-foreground/75 hover:text-foreground" data-testid="link-footer-contact">Custom order</Link>
+              <a href={getWhatsappLink()} target="_blank" rel="noopener noreferrer" className="tram-focus block text-foreground/75 hover:text-foreground" data-testid="link-footer-contact">Custom order</a>
             </div>
           </div>
           <div>
@@ -356,7 +359,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-sm text-muted-foreground" data-testid="text-footer-note">
-          © {new Date().getFullYear()} tramboo. All imagery is placeholder for prototype.
+          © {new Date().getFullYear()} tramboo studio — Crafted for generations.
         </div>
       </div>
     </footer>
