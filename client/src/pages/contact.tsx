@@ -122,7 +122,7 @@ export default function Contact() {
               </div>
               <div className="rounded-2xl border border-border/70 bg-card p-4" data-testid="card-contact-phone">
                 <Phone className="h-4 w-4 text-foreground/70" />
-                <div className="mt-3 text-sm">+00 0000 000 000</div>
+                <div className="mt-3 text-sm">+91 7051136173</div>
               </div>
               <div className="rounded-2xl border border-border/70 bg-card p-4" data-testid="card-contact-location">
                 <MapPin className="h-4 w-4 text-foreground/70" />

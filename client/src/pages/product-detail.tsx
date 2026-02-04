@@ -2,11 +2,17 @@ import { Link, useParams } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Check, Info } from "lucide-react";
 
-import riverImg from "@/assets/images/river-table.jpg";
-import diningImg from "@/assets/images/dining-table.jpg";
-import chairImg from "@/assets/images/chair.jpg";
+import riverImg from "@/assets/images/river-table-v4.jpg";
+import diningImg from "@/assets/images/dining-table-v4.webp";
+import chairImg from "@/assets/images/chair-v2.jpg";
 import craftImg from "@/assets/images/craft.jpg";
 import studioImg from "@/assets/images/studio.jpg";
+import riverV2 from "@/assets/images/river-table-v2.jpg";
+import riverV3 from "@/assets/images/river-table-v3.webp";
+import diningV2 from "@/assets/images/dining-table-v2.webp";
+import diningV3 from "@/assets/images/dining-table-v3.webp";
+import chairV3 from "@/assets/images/chair-v3.jpg";
+import chairV4 from "@/assets/images/chair-v4.jpg";
 
 const PRODUCTS = [
   {
@@ -17,7 +23,7 @@ const PRODUCTS = [
     size: "2200 × 900",
     leadTime: "8–12 weeks",
     image: riverImg,
-    gallery: [riverImg, studioImg, craftImg],
+    gallery: [riverImg, riverV2, riverV3],
     description: "A centerpiece of natural movement. We select live-edge walnut slabs with deep character, binding them with a hand-poured resin 'river'. Each table is a one-of-one conversation between raw texture and polished form.",
     details: ["Solid Walnut slabs", "Customizable resin color", "Hand-finished matte oil", "Matte black steel base"]
   },
@@ -29,7 +35,7 @@ const PRODUCTS = [
     size: "2400 × 1000",
     leadTime: "6–10 weeks",
     image: diningImg,
-    gallery: [diningImg, studioImg, craftImg],
+    gallery: [diningImg, diningV2, diningV3],
     description: "The classic tramboo dining form. Quiet proportions and invisible strength. Built with traditional joinery that allows the timber to breathe and move over generations. A surface designed for life.",
     details: ["Premium Walnut timber", "Traditional mortise and tenon", "Seats 8-10 comfortably", "Reinforced understructure"]
   },
@@ -41,7 +47,7 @@ const PRODUCTS = [
     size: "W 520 · H 780",
     leadTime: "5–7 weeks",
     image: chairImg,
-    gallery: [chairImg, studioImg, craftImg],
+    gallery: [chairImg, chairV3, chairV4],
     description: "Sculpted for the body, built for the eyes. The Elm Chair uses the lighter grain of elm to create a silhouette that feels weightless but incredibly stable. Every curve is sanded by hand until it feels like silk.",
     details: ["Solid Elm frame", "Ergonomic sculpted seat", "Lightweight profile", "Invisible joint reinforcement"]
   },
@@ -59,7 +65,7 @@ const PRODUCTS = [
   },
 ];
 
-const WHATSAPP_NUMBER = "919797374231";
+const WHATSAPP_NUMBER = "917051136173";
 
 export default function ProductDetail() {
   const { id } = useParams();
