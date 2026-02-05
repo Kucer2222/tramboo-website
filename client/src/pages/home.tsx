@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 
-import heroImg from "@/assets/images/river-table-v8.webp";
+import heroImg from "@/assets/images/studio-hero.webp";
 import woodGrainImg from "@/assets/images/wood-detail-v1.webp";
 import riverImg from "@/assets/images/river-table-v4.jpg";
 import diningImg from "@/assets/images/dining-table-v4.webp";
